@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'Helvetica Neue Bold', sans-serif;
+  src: url(../fonts/helveticaneueultralight.woff); }
+
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 80px !important;
+    line-height: 85px !important; }
+  p {
+    font-size: 18px !important; } }
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 70px !important;
+    line-height: 75px !important; }
+    h1:nth-child(1) {
+      top: 75px !important; }
+    h1:nth-child(2) {
+      top: 175px !important; }
+  p {
+    font-size: 15px !important; } }
+
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 60px !important;
+    line-height: 65px !important; }
+    h1:nth-child(1) {
+      top: 75px !important; }
+    h1:nth-child(2) {
+      top: 175px !important; }
+  p {
+    font-size: 13px !important; } }
+
+@media screen and (max-width: 350px) {
+  h1 {
+    font-size: 50px !important;
+    line-height: 55px !important; }
+    h1:nth-child(1) {
+      top: 75px !important; }
+    h1:nth-child(2) {
+      top: 175px !important; }
+  p {
+    font-size: 11px !important; } }
+
+body {
+  background: #F5F5F5;
+  font-family: 'Helvetica', sans-serif;
+  position: fixed; }
+  body h1 {
+    position: relative;
+    left: 30px;
+    color: #3c3c3c;
+    font-size: 100px;
+    line-height: 90px;
+    letter-spacing: -2px; }
+    body h1:nth-child(1) {
+      top: 50px; }
+    body h1:nth-child(2) {
+      top: 150px; }
+    body h1 i {
+      color: #187EF6;
+      font-style: normal; }
+  body p {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    display: block;
+    font-size: 20px; }

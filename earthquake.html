@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>EARTHQUAKE!</title>
+        <meta name="description" content="Earthquake data." />
+        
+        <!-- Open Graph -->
+        <meta property="og:title" content="Earthquakes keep happening." />
+        <meta property="og:site_name" content="Daily Bruin Online Intern training." />
+        
+        <!-- CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">        
+		<!-- JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.js"></script>
+
+        <script>
+	     /*   
+            // execute once my page is loaded
+            $(document).ready(function(){
+
+                // make the ajax request
+                $.ajax({
+                    url: "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_day.geojson"
+					
+                // process_data is a callback function, the result of the data 
+                // is automatically passed in as an argument
+                }).done(process_data);
+            });
+
+            function process_data(json_data) {
+	            var locations = [];
+	            var cities = [];
+	            var places = [];
+	            var magnitudes = [];
+	            
+	            for (i = 0; i < json_data.features.length; i++) {
+	            	locations[i] = json_data.features[i]['properties']['place'];
+	            	cities[i] = locations[i].split(' of ');
+	            	places[i] = cities[i][1];
+	            	magnitudes[i] = json_data.features[i]['properties']['mag'];
+	            	if (magnitudes[5] <= 2) {
+						$("#earthquake-data").html("yeah");
+	            	}
+	            	else if (magnitudes[5] >= 2 && magnitudes[5] <= 5) {
+						$("#earthquake-data").html("right");
+					}
+					else {
+						$("#earthquake-data").html("damn");
+					}
+	            }
+                
+                console.log(locations);
+                console.log(cities);
+                console.log(places);
+                console.log(magnitudes);
+                
+                var source = $("#entry-template").html();
+                var template = Handlebars.compile(source);
+                var context = {location: locations, place: places, magnitude: magnitudes};
+                var html = template(context);
+                $("#earthquake-data").html(html);
+            }
+
+        </script>
+        
+        <script id="entry-template" type="text/x-handlebars-template">
+	        <h1>{{place}}</p>
+			<h1>{{magnitude}}</h1>
+	        <p>{{location}}</p>	 
+	        */   	
+	    </script>
+	    
+		<script src="js/main.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <div id="earthquake-data">
+			<h1>Los Angeles</h1>
+	        <h1>It's<br>
+		    Fucking<br>
+		    <i>Earthquaking</i><br>
+		    Now
+	        </h1>
+	        <p>3.5 degree earthquake 16m N of Los Angeles</p>
+            </div>
+        </div>
+    </body>
+</html>
