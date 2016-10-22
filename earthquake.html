@@ -19,7 +19,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.js"></script>
 
         <script>
-	     /*   
+	      
             // execute once my page is loaded
             $(document).ready(function(){
 
@@ -41,17 +41,8 @@
 	            for (i = 0; i < json_data.features.length; i++) {
 	            	locations[i] = json_data.features[i]['properties']['place'];
 	            	cities[i] = locations[i].split(' of ');
-	            	places[i] = cities[i][1];
+	            	places[i] = cities[i][1].split(', ')[0];
 	            	magnitudes[i] = json_data.features[i]['properties']['mag'];
-	            	if (magnitudes[5] <= 2) {
-						$("#earthquake-data").html("yeah");
-	            	}
-	            	else if (magnitudes[5] >= 2 && magnitudes[5] <= 5) {
-						$("#earthquake-data").html("right");
-					}
-					else {
-						$("#earthquake-data").html("damn");
-					}
 	            }
                 
                 console.log(locations);
@@ -61,18 +52,43 @@
                 
                 var source = $("#entry-template").html();
                 var template = Handlebars.compile(source);
-                var context = {location: locations, place: places, magnitude: magnitudes};
-                var html = template(context);
-                $("#earthquake-data").html(html);
+
+                var i = 0;
+                window.setInterval(function(){
+
+                    var context = {location: locations[i], place: places[i], magnitude: magnitudes[i]};
+                    var html = template(context);
+                    $("#earthquake-data").html(html);
+
+                    if (magnitudes[i] <= 2) {
+                        $("#earthquake-data i").html("peaceful");
+                    }
+                    else if (magnitudes[i] >= 2 && magnitudes[i] <= 5) {
+                        $("#earthquake-data i").html("shaking");
+                    }
+                    else {
+                        $("#earthquake-data i").html("earthquaking");
+                    }
+
+                    i++;
+                    if(i === locations.length) {
+                        window.clearInterval(i);
+                    }
+                }, 2000);
+                
             }
+        
 
         </script>
         
         <script id="entry-template" type="text/x-handlebars-template">
-	        <h1>{{place}}</p>
-			<h1>{{magnitude}}</h1>
-	        <p>{{location}}</p>	 
-	        */   	
+	        <h1>{{place}}</h1>
+            <h1>it's<br>
+            <img src="./img/bar.png">fucking<br>
+            <i>earthquaking</i><br>
+			now.                                  
+            </h1>
+	        <p>{{magnitude}} degree earthquake {{location}}</p>
 	    </script>
 	    
 		<script src="js/main.js"></script>
@@ -81,13 +97,6 @@
     <body>
         <div class="container">
             <div id="earthquake-data">
-			<h1>Los Angeles</h1>
-	        <h1>It's<br>
-		    Fucking<br>
-		    <i>Earthquaking</i><br>
-		    Now
-	        </h1>
-	        <p>3.5 degree earthquake 16m N of Los Angeles</p>
             </div>
         </div>
     </body>
