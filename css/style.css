@@ -1,19 +1,32 @@
 @font-face {
-  font-family: 'Helvetica Neue Bold', sans-serif;
-  src: url(../fonts/helveticaneueultralight.woff); }
+  font-family: 'helvetica-neue-regular';
+  src: url("../fonts/helvetica-neue/regular/HelveticaNeue.eot");
+  src: url("../fonts/helvetica-neue/regular/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("../fonts/helvetica-neue/regular/HelveticaNeue.woff") format("woff"), url("../fonts/helvetica-neue/regular/HelveticaNeue.ttf") format("truetype"), url("../fonts/helvetica-neue/regular/HelveticaNeue.svg#HelveticaNeueRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/**
+*
+* helvetica-neue-bold
+*
+**/
+@font-face {
+  font-family: 'helvetica-neue-bold';
+  src: url("../fonts/helvetica-neue/bold/HelveticaNeue-Bold.eot");
+  src: url("../fonts/helvetica-neue/bold/HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/helvetica-neue/bold/HelveticaNeue-Bold.woff") format("woff"), url("../fonts/helvetica-neue/bold/HelveticaNeue-Bold.ttf") format("truetype"), url("../fonts/helvetica-neue/bold/HelveticaNeue-Bold.svg#HelveticaNeueBold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
 @media screen and (max-width: 900px) {
   h1 {
     font-size: 80px !important;
     line-height: 85px !important; }
-  h1 img {
-    height: 35px !important;
-    width: 315px !important;
-    top: 365px !important;
-  }
+  img {
+    height: 20px !important;
+    width: 300px !important;
+    top: 368px !important; }
   p {
-    font-size: 18px !important; } 
-  }
+    font-size: 18px !important; } }
 
 @media screen and (max-width: 700px) {
   h1 {
@@ -23,13 +36,14 @@
       top: 75px !important; }
     h1:nth-child(2) {
       top: 175px !important; }
-  h1 img {
-      height: 30px !important;
-      width: 280px !important;
-      top: 365px !important;
-    }
+  img {
+    height: 17px !important;
+    width: 275px !important;
+    top: 368px !important; }
   p {
-    font-size: 15px !important; } }
+    font-size: 14px !important; }
+  .credits {
+    display: none; } }
 
 @media screen and (max-width: 450px) {
   h1 {
@@ -38,12 +52,11 @@
     h1:nth-child(1) {
       top: 75px !important; }
     h1:nth-child(2) {
-      top: 175px !important; }
-  h1 img {
-    height: 25px !important;
-    width: 245px !important;
-    top: 342px !important;
-  }
+      top: 160px !important; }
+  img {
+    height: 14px !important;
+    width: 250px !important;
+    top: 330px !important; }
   p {
     font-size: 13px !important; } }
 
@@ -54,46 +67,141 @@
     h1:nth-child(1) {
       top: 75px !important; }
     h1:nth-child(2) {
-      top: 175px !important; }
-  h1 img {
-    height: 22px !important;
-    width: 215px !important;
-    top: 318px !important;
-  }
+      top: 160px !important; }
+  img {
+    height: 12px !important;
+    width: 200px !important;
+    top: 303px !important; }
   p {
     font-size: 11px !important; } }
 
 body {
   background: #F5F5F5;
-  font-family: 'Helvetica', sans-serif;
-  position: fixed; }
+  font-family: 'helvetica-neue-bold', 'Helvetica', sans-serif;
+  position: fixed;
+  width: 100%; }
   body h1 {
     position: relative;
     left: 30px;
     color: #3c3c3c;
     font-size: 100px;
     line-height: 90px;
+    font-weight: 500;
     letter-spacing: -2px; }
     body h1:nth-child(1) {
       top: 50px; }
     body h1:nth-child(2) {
       top: 150px; }
     body h1 i {
-      color: #187EF6;
       font-style: normal; }
-    body span {
-      position: relative;
-    }
-    body img {
-      position: fixed;
-      height: 40px;
-      width: 375px;
-      top: 377px;
-      margin-left: -30px;
-    }
+    body h1 i.earthquake {
+      color: #187EF6; }
+  body img {
+    position: fixed;
+    height: 20px;
+    width: 375px;
+    top: 380px;
+    margin-left: -30px; }
   body p {
+    font-family: 'helvetica-neue-regular', 'Helvetica', sans-serif;
     position: absolute;
     bottom: 0;
+    width: 100%;
     left: 30px;
     display: block;
-    font-size: 20px; }
+    font-size: 18px; }
+
+.earthquake-data-container {
+  opacity: 1;
+  transition: all 2s cubic-bezier(0, 1, 0.5, 1); }
+
+.credits {
+  /* Abs positioning makes it not take up vert space */
+  position: absolute;
+  width: 100vh;
+  text-align: center;
+  font-size: 13px;
+  font-family: 'helvetica-neue-regular', 'Helvetica', sans-serif;
+  /* Border is the new background */
+  background: none;
+  color: black;
+  /* Rotate from top left corner (not default) */
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  top: 0;
+  left: 99%;
+  -moz-transform: translateY(-50%) rotate(90deg);
+  -webkit-transform: translateY(-50%) rotate(90deg);
+  transform: translateY(-50%) rotate(90deg); }
+  .credits a {
+    text-decoration: underline;
+    color: #3c3c3c; }
+    .credits a:hover {
+      color: #9f9f9f; }
+
+/*
+**	Location indicator **
+						*/
+.location_indicator {
+  margin: 30px auto;
+  position: absolute;
+  top: 40%;
+  left: 47%;
+  transition: all 0.3s ease-in-out; }
+
+.location_indicator:before, .location_indicator:after {
+  position: absolute;
+  content: ""; }
+
+.location_indicator:before {
+  width: 30px;
+  height: 30px;
+  border-radius: 100% 100% 100% 0;
+  box-shadow: 0px 0px 0px 2px gray;
+  -webkit-animation: mapping 1s linear infinite;
+  -moz-animation: mapping 1s linear infinite;
+  animation: mapping 1s linear infinite;
+  -webkit-transform: rotate(-46deg);
+  -moz-transform: rotate(-46deg);
+  transform: rotate(-46deg); }
+
+.location_indicator:after {
+  width: 30px;
+  height: 10px;
+  border-radius: 100%;
+  left: 0px;
+  background-color: rgba(155, 155, 155, 0.5);
+  top: 40px;
+  z-index: -1; }
+
+@-webkit-keyframes mapping {
+  0% {
+    top: 0; }
+  50% {
+    top: -5px; }
+  100% {
+    top: 0; } }
+
+@-moz-keyframes mapping {
+  0% {
+    top: 0; }
+  50% {
+    top: -5px; }
+  100% {
+    top: 0; } }
+
+@keyframes mapping {
+  0% {
+    top: 0; }
+  50% {
+    top: -5px; }
+  100% {
+    top: 0; } }
+
+.fadeIn {
+  opacity: 1; }
+
+.fadeOut {
+  opacity: 0; }
