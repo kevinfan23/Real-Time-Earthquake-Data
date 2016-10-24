@@ -42,7 +42,7 @@ function display_data() {
 
         var context = {location: locations[i], place: places[i], magnitude: magnitudes[i]};
         var html = template(context);
-        $("#earthquake-data").fadeIn().html(html)
+        $("#earthquake-data").html(html);
 
         if (magnitudes[i] <= 2) {
 	        $(".des").html("another");

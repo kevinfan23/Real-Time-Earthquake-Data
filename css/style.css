@@ -113,7 +113,7 @@ body {
 
 .earthquake-data-container {
   opacity: 1;
-  transition: all 2s cubic-bezier(0, 1, 0.5, 1); }
+  transition: all 1s ease; }
 
 .credits {
   /* Abs positioning makes it not take up vert space */
@@ -149,7 +149,7 @@ body {
   position: absolute;
   top: 40%;
   left: 47%;
-  transition: all 0.3s ease-in-out; }
+  transition: all 0.4s ease-out; }
 
 .location_indicator:before, .location_indicator:after {
   position: absolute;
@@ -173,7 +173,7 @@ body {
   border-radius: 100%;
   left: 0px;
   background-color: rgba(155, 155, 155, 0.5);
-  top: 40px;
+  top: 45px;
   z-index: -1; }
 
 @-webkit-keyframes mapping {
