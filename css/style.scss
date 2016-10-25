@@ -57,18 +57,18 @@
 		}
 		
 		&:nth-child(2) {
-			top: 175px !important;
+			top: 275px !important;
 		}
 	}
 	
 	img {
 		height: 17px !important;
-		width: 275px !important;
+		width: 250px !important;
 		top: 368px !important;
 	}
 	
 	p {
-		font-size: 14px !important;
+		font-size: 12px !important;
 	}
 	
 	.credits {
@@ -87,7 +87,7 @@
 		}
 		
 		&:nth-child(2) {
-			top: 160px !important;
+			top: 235px !important;
 		}
 	}
 	
@@ -98,22 +98,22 @@
 	}
 	
 	p {
-		font-size: 13px !important;
+		font-size: 12px !important;
 	}
 }
 
 @media screen and (max-width: 350px) {
 	
 	h1 {
-		font-size: 50px !important;
+		font-size: 45px !important;
 		line-height: 55px !important;
 		
 		&:nth-child(1) {
 			top: 75px !important;
 		}
-		
+	
 		&:nth-child(2) {
-			top: 160px !important;
+			top: 225px !important;
 		}
 	}
 	
@@ -124,7 +124,7 @@
 	}
 	
 	p {
-		font-size: 11px !important;
+		font-size: 10px !important;
 	}
 }
 
@@ -137,7 +137,7 @@ body {
 	width: 100%;
 	
 	h1 {
-		position: relative;
+		position: absolute;
 		left: 30px;
 		color: #3c3c3c;
 		font-size: 100px;
@@ -150,7 +150,7 @@ body {
 		}
 		
 		&:nth-child(2) {
-			top: 150px;
+			top: 250px;
 		}
 		
 		i {
@@ -192,7 +192,7 @@ body {
     position: absolute;
     width: 100vh;
     text-align: center;
-    font-size: 13px;
+    font-size: 10px;
     font-family: 'helvetica-neue-regular', 'Helvetica', sans-serif;
     
     /* Border is the new background */
